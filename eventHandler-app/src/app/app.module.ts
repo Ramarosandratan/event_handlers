@@ -5,10 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatButtonModule } from "@angular/material/button";
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 @NgModule({
   declarations: [
@@ -16,9 +19,11 @@ import {MatSelectModule} from '@angular/material/select';
     AboutComponent
   ],
   imports: [
+    MatStepperModule,
     MatSelectModule,
     MatIconModule,
     MatButtonModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule

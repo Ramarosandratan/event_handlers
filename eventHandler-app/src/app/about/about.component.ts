@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
 
 @Component({
   selector: 'app-about',
@@ -16,6 +11,10 @@ export class AboutComponent implements OnInit {
 
   title = "Event Handler";
 
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  isEditable = false;
+
   events = [
     "Weeding",
     "Birthday",
@@ -23,9 +22,15 @@ export class AboutComponent implements OnInit {
     "Ceremony"
   ];
 
-  constructor() { }
+  constructor(private _formBuilder: FormBuilder) {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl:['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

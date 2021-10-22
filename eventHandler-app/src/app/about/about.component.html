@@ -3,10 +3,16 @@
     <header class="mb-auto">
       <div>
         <h1 class="float-md-start mb-0">
-          {{title}}
+          {{ title }}
         </h1>
         <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a mat-flat-button class="nav-link active" aria-current="page" href="#">Home</a>
+          <a
+            mat-flat-button
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            >Home</a
+          >
           <a mat-flat-button class="nav-link" href="#">Features</a>
           <a mat-flat-button class="nav-link" href="#">Contact</a>
         </nav>
@@ -16,8 +22,8 @@
     <main class="px-3">
       <h1>Your dream come true</h1>
       <p class="lead">
-        event handler, calculates all expenses for an event. Organizes everything you need to do.
-You can choose from the selected providers.
+        event handler, calculates all expenses for an event. Organizes
+        everything you need to do. You can choose from the selected providers.
       </p>
       <p class="lead">
         <button mat-button>
@@ -40,16 +46,13 @@ You can choose from the selected providers.
       />
     </div>
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-3">
-        Each event is unique
-      </h1>
+      <h1 class="display-5 fw-bold lh-1 mb-3">Each event is unique</h1>
       <p class="lead">
-        let's start filling out each form and we will give everything you would need to do it.
+        let's start filling out each form and we will give everything you would
+        need to do it.
       </p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <button mat-raised-button>
-          <mat-icon>next_plan</mat-icon> Start
-        </button>
+        <button mat-raised-button><mat-icon>next_plan</mat-icon> Start</button>
       </div>
     </div>
   </div>
@@ -66,202 +69,42 @@ You can choose from the selected providers.
     "
   >
     <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-normal">what do you want to do?</h1>
-      <p class="lead fw-normal">
-        choose our option in the list
-      </p>
-      <mat-form-field appearance="fill">
-        <mat-label>Event</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let event of events" [value]="event">
-            {{event}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div
-      class="product-device product-device-2 shadow-sm d-none d-md-block"
-    ></div>
-  </div>
+      <mat-stepper orientation="vertical">
+        <mat-step>
+          <ng-template matStepLabel>What event would you to prepare?</ng-template>
+          <ng-template matStepContent>
+            <h4>Choose your event</h4>
+            <mat-form-field appearance="fill">
+              <mat-label>Event</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let event of events" [value]="event">
+                  {{ event }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button mat-button matStepperNext>Next</button>
+          </ng-template>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>How many people would you to come?</ng-template>
+          <ng-template matStepContent>
+            <form class="example-form">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Choose an number</mat-label>
+                <input matInput type="number">
+              </mat-form-field>
+            </form>
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div
-      class="
-        bg-dark
-        me-md-3
-        pt-3
-        px-3
-        pt-md-5
-        px-md-5
-        text-center text-white
-        overflow-hidden
-      "
-    >
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div
-        class="bg-light shadow-sm mx-auto"
-        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
-      ></div>
-    </div>
-    <div
-      class="
-        bg-light
-        me-md-3
-        pt-3
-        px-3
-        pt-md-5
-        px-md-5
-        text-center
-        overflow-hidden
-      "
-    >
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div
-        class="bg-dark shadow-sm mx-auto"
-        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
-      ></div>
-    </div>
-  </div>
-
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div
-      class="
-        bg-light
-        me-md-3
-        pt-3
-        px-3
-        pt-md-5
-        px-md-5
-        text-center
-        overflow-hidden
-      "
-    >
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div
-        class="bg-dark shadow-sm mx-auto"
-        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
-      ></div>
-    </div>
-    <div
-      class="
-        bg-primary
-        me-md-3
-        pt-3
-        px-3
-        pt-md-5
-        px-md-5
-        text-center text-white
-        overflow-hidden
-      "
-    >
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div
-        class="bg-light shadow-sm mx-auto"
-        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
-      ></div>
-    </div>
-  </div>
-
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div
-      class="
-        bg-light
-        me-md-3
-        pt-3
-        px-3
-        pt-md-5
-        px-md-5
-        text-center
-        overflow-hidden
-      "
-    >
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div
-        class="bg-body shadow-sm mx-auto"
-        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
-      ></div>
-    </div>
-    <div
-      class="
-        bg-light
-        me-md-3
-        pt-3
-        px-3
-        pt-md-5
-        px-md-5
-        text-center
-        overflow-hidden
-      "
-    >
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div
-        class="bg-body shadow-sm mx-auto"
-        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
-      ></div>
-    </div>
-  </div>
-
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div
-      class="
-        bg-light
-        me-md-3
-        pt-3
-        px-3
-        pt-md-5
-        px-md-5
-        text-center
-        overflow-hidden
-      "
-    >
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div
-        class="bg-body shadow-sm mx-auto"
-        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
-      ></div>
-    </div>
-    <div
-      class="
-        bg-light
-        me-md-3
-        pt-3
-        px-3
-        pt-md-5
-        px-md-5
-        text-center
-        overflow-hidden
-      "
-    >
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div
-        class="bg-body shadow-sm mx-auto"
-        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
-      ></div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </ng-template>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Step 3</ng-template>
+          <p>This content was rendered eagerly</p>
+          <button mat-button matStepperPrevious>Back</button>
+        </mat-step>
+      </mat-stepper>
     </div>
   </div>
 </div>
