@@ -30,6 +30,11 @@
  */
 
 .bodyperso {
+  background-image: url('../../assets/images/cover/amanda-mocci-Zyp3t67rrP4-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
